@@ -147,7 +147,7 @@ end)
 
 local OtherSection = Other:NewSection("Fly Script")
 OtherSection:NewButton("Fly", "Executes The Fly Script!", function()
-    loadstring(game:HttpGet(https://raw.githubusercontent.com/xMintix/Flight-Script/main/Mainstring.lua))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/xMintix/Flight-Script/main/Mainstring.lua"))()
 end)
 
 local OtherSection = Other:NewSection("Rejoin Game Script")
