@@ -11,9 +11,8 @@ wait(3)
 Drawing:Remove()
 
 
-
 if game.PlaceId == 2098516465 then --Execute RobloxianHighSchool2 Script If You Join RHS2 
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/xMintix/Lemonade-Hub/main/RobloxianHighSchool2"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/xMintix/Lemonade-Hub/main/RHS2String"))()
 elseif game.PlaceId == 1 then --Execute Game2 Script If You Join Game2 
     print('Game Script 2')
 else -- Universal Script
