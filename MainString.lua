@@ -7,20 +7,15 @@ Drawing.Size=32
 Drawing.Color=Color3.new(255,0,0)
 game:GetService("RunService").RenderStepped:Connect(function()Drawing.Position=Vector2.new(workspace.CurrentCamera.ViewportSize.X/2-100
 ,workspace.CurrentCamera.ViewportSize.Y/2)end)
+wait(3)
+Drawing:Remove()
 
 
 
-wait(1)
-a:Remove()
-
-if game.PlaceId == 286090429 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/fusiongreg/BoltsHubV5/main/Arsenal2"))()
-elseif game.PlaceId == 8412573470 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/fusiongreg/BoltsHubV5/main/ArsenalQuest"))()
-elseif game.PlaceId == 301549746 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/fusiongreg/BoltsHubV5/main/CBRO"))()
-elseif game.PlaceId == 6172932937 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/fusiongreg/BoltsHubV5/main/Energy%20Assault"))()
+if game.PlaceId == 2098516465 then --Execute RobloxianHighSchool2 Script If You Join RHS2 
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/xMintix/Lemonade-Hub/main/RobloxianHighSchool2"))()
+elseif game.PlaceId == 1 then
+    print('Game Script 2')
 else
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/AndrewDarkyy/NOWAY/main/darkyyware.lua"))()
+    print('Game Script 3')
 end

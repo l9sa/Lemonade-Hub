@@ -4,4 +4,8 @@
  
 **To Run This Script Put The Following In Your Roblox Executer**
 
-```loadstring(game:HttpGet("https://raw.githubusercontent.com/xMintix/Robloxian-High-School-2--Script/main/MainString.lua"))()```
+```lua
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xMintix/Lemonade-Hub/main/MainString.lua"))()
+```
+
+
