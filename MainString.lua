@@ -7,7 +7,7 @@ end
 
 local a=Drawing.new("Text")
 a.Visible=true
-a.Text="Brought to you by @xMintix#0 on discord"
+a.Text="Brought to you by @xMintix on discord"
 a.Transparency=2
 a.Font=14
 a.Size=33
@@ -18,10 +18,10 @@ wait(3)
 a:Remove()
 
 
-if game.PlaceId == 2098516465 then --Execute RobloxianHighSchool2 Script If You Join RHS2 
+if game.PlaceId == 2098516465 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/xMintix/Lemonade-Hub/main/RHS2String"))()
-elseif game.PlaceId == 1 then --Execute Game2 Script If You Join Game2 
+elseif game.PlaceId == 1 then 
     print('Game Script 2')
 else -- Universal Script
-    print('Game Script 3')
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/xMintix/Lemonade-Hub/main/Universal"))()
 end

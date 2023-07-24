@@ -5,6 +5,7 @@ local Job = Window:NewTab("Jobs")
 
 local JobSection = Job:NewSection("Subblox Delivery")
 JobSection:NewButton("Sunblox Delivery", "Finish Sunblox Delivery Job", function()
+
     local humanoid = game.Players.LocalPlayer.Character.HumanoidRootPart
     _G.SunbloxDelivery = true
 
@@ -73,7 +74,7 @@ end)
 local JobSection = Job:NewSection("Servant Of The Void")
 JobSection:NewButton("Finish Job", "Gets Parkour Checkpoint Orbs To AutoComplete", function()
 print("Begin Servant Of The Void Completion")
-for i = 1 , 50 do
+for i = 1 , 150 do
     game:GetService("ReplicatedStorage").Remotes.Jobs.ChefUmbras.SectionCompleted:FireServer(
         {
             [1] = "D8706113-6474-49E8-ACBA-CCF96A04B185"
@@ -87,10 +88,10 @@ end)
 local Player = Window:NewTab("Player")
 local PlayerSection = Player:NewSection("Player")
 
-PlayerSection:NewSlider("WalkSpeed", "Walk Faster", 320, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+PlayerSection:NewSlider("WalkSpeed", "Walk Faster", 320, 16, function(s)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 end)
-PlayerSection:NewSlider("JumpPower", "Jump Higher", 350, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+PlayerSection:NewSlider("JumpPower", "Jump Higher", 350, 50, function(s)
     game.Players.LocalPlayer.Character.Humanoid.JumPower = s
 end)
 
@@ -110,38 +111,36 @@ end)
 local OtherSection = Other:NewSection("Infinite Jump Script")
 OtherSection:NewButton("InfiniteJump", "Runs Infinite Jump Script!", function()
     game.StarterGui:SetCore("SendNotification", {
-        Title = "xMintix Dev";
-        Text = "- Infinite Jump executed Spam the space button as you can.";
-        Icon = "rbxassetid://4414605822";
+        Title = "@xMintix On Discord";
+        Text = "Infinite Jump executed Spam the space button.";
         Duration = 3;
     })
-     
+
+    local Player = game:GetService("Players").LocalPlayer
+    local Mouse = Player:GetMouse()
+
     _G.infinjump = true
-     
-    local Player = game:GetService("Players").LocalPlayer
-    local Mouse = Player:GetMouse()
+
     Mouse.KeyDown:connect(function(k)
-    if _G.infinjump then
-    if k:byte() == 32 then
-    Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
-    Humanoid:ChangeState("Jumping")
-    wait(0.1)
-    Humanoid:ChangeState("Seated")
-    end
-    end
+        if _G.infinjump then
+            if k:byte() == 32 then
+                Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+                Humanoid:ChangeState("Jumping")
+                wait(0.075)
+                Humanoid:ChangeState("Seated")
+            end
+        end
     end)
-     
-    local Player = game:GetService("Players").LocalPlayer
-    local Mouse = Player:GetMouse()
+
     Mouse.KeyDown:connect(function(k)
     k = k:lower()
-    if k == "f" then
-    if _G.infinjump == true then
-    _G.infinjump = false
-    else
-    _G.infinjump = true
-    end
-    end
+        if k == "f" then
+            if _G.infinjump == true then
+                _G.infinjump = false
+            else
+                _G.infinjump = true
+            end
+        end
     end)
 end)
 
@@ -166,11 +165,6 @@ local Rejoin = coroutine.create(function()
 end)
 
 coroutine.resume(Rejoin)
-end)
-
-local OtherSection = Other:NewSection("Chat Spoofer Script")
-OtherSection:NewButton("ChatSpoofer", "Runs The Chat Spoofer Script!", function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/djBfk8Li"))()
 end)
 
 local Tab = Window:NewTab("Credits")
