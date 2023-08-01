@@ -31,7 +31,6 @@ local AutoFarmSection = MainTab:CreateSection("Autofarm Chests")
 local AutofarmChestButton = MainTab:CreateButton({
     Name = "On/Off",
     Callback = function()
-        e
     end,
  })
 
