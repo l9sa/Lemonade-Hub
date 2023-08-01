@@ -1,11 +1,4 @@
-if player.Character.HumanoidRootPart.BrickColor == BrickColor.new("Brown") then
-    play:Kick("You are not allowed to use this script using that skin color.")
-end
-if player.Character.HumanoidRootPart.BrickColor == BrickColor.new("Black") then
-    play:Kick("You are not allowed to use this script using that skin color.")
-end
-
-local a=Drawing.new("Text")
+local a = Drawing.new("Text")
 a.Visible=true
 a.Text="Brought to you by @xMintix on discord"
 a.Transparency=2
