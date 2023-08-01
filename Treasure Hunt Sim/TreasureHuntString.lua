@@ -75,7 +75,7 @@ GUIScript2Button.TextScaled = true
 GUIScript2Button.TextSize = 14.000
 GUIScript2Button.TextWrapped = true
 GUIScript2Button.MouseButton1Click:Connect(function()
-	loadstring(game:HttpGet(('https://raw.githubusercontent.com/xMintix/Lemonade-Hub/main/Treasure%20Hunt%20Sim/EquipToolsBackpackGUI'),true))()
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/xMintix/Lemonade-Hub/main/Treasure%20Hunt%20Sim/EquipToolsBackpackGUI.lua'),true))()
 end)
 
 Shadow.Name = "Shadow"
@@ -114,7 +114,7 @@ GUIScript3Button.TextScaled = true
 GUIScript3Button.TextSize = 14.000
 GUIScript3Button.TextWrapped = true
 GUIScript3Button.MouseButton1Click:Connect(function()
-	loadstring(game:HttpGet(('https://raw.githubusercontent.com/xMintix/Lemonade-Hub/main/Treasure%20Hunt%20Sim/TreasureHuntSim'),true))()
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/xMintix/Lemonade-Hub/main/Treasure%20Hunt%20Sim/DumbAutoFarm.lua'),true))()
 end)
 
 Shadow_2.Name = "Shadow"
@@ -133,7 +133,7 @@ TextLabel_3.Position = UDim2.new(0.5, 0, 0.5, 0)
 TextLabel_3.Size = UDim2.new(1, -20, 1, -20)
 TextLabel_3.ZIndex = 2
 TextLabel_3.Font = Enum.Font.GothamSemibold
-TextLabel_3.Text = "Main TreasureHunt ScriptHub"
+TextLabel_3.Text = "Failed Autofarm (works kinda)"
 TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_3.TextScaled = true
 TextLabel_3.TextSize = 14.000
@@ -198,7 +198,7 @@ GUIScript1Button.TextScaled = true
 GUIScript1Button.TextSize = 14.000
 GUIScript1Button.TextWrapped = true
 GUIScript1Button.MouseButton1Click:Connect(function()
-	loadstring(game:HttpGet(('https://raw.githubusercontent.com/xMintix/Lemonade-Hub/main/Treasure%20Hunt%20Sim/TreasureHuntSim'),true))()
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/xMintix/Lemonade-Hub/main/Treasure%20Hunt%20Sim/TreasureHuntSim.lua'),true))()
 end)
 
 Shadow_4.Name = "Shadow"
