@@ -1,3 +1,5 @@
+-- Gui made by xMintix
+
 local TresureBreakSimulator = Instance.new("ScreenGui")
 local BG = Instance.new("Frame")
 local Line = Instance.new("Frame")

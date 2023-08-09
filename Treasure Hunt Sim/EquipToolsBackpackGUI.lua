@@ -1,11 +1,4 @@
---[[
-    Discord : xMintix
-
-    How to use:
-     1) Run with a executer.
-     2) Select the tool and backpack you have equipped. It will automatically buy the tool and backpack if you don't own it.
-     3) That's it.
-]]
+-- Gui made by xMintix
 
 local Plrs = game:GetService("Players")
 local Run = game:GetService("RunService")
@@ -232,7 +225,6 @@ function Init()
     local buyequiptoolbackpack_B = Instance.new("TextButton")
     local toggleautomine_B = Instance.new("TextButton")
 
-    -- Propiedades
 
     TreasureHuntGUI.Name = "TreasureHuntGUI"
     TreasureHuntGUI.Parent = CoreGui
@@ -242,7 +234,7 @@ function Init()
     MainFrame.Parent = TreasureHuntGUI
     MainFrame.Active = true
     MainFrame.BackgroundColor3 = Color3.new(0, 0, 1)
-	MainFrame.BackgroundTransparency = 0.5
+	MainFrame.BackgroundTransparency = 0
     MainFrame.BorderSizePixel = 0
     MainFrame.Draggable = true
     MainFrame.LayoutOrder = 2
@@ -252,7 +244,7 @@ function Init()
     title.Name = "title"
     title.Parent = MainFrame
     title.BackgroundColor3 = Color3.new(1, 1, 1)
-    title.BackgroundTransparency = 1
+    title.BackgroundTransparency = 0.5
     title.Size = UDim2.new(1, 0, 0, 40)
     title.Font = Enum.Font.SourceSansBold
     title.Text = "Treasure Hunt Simulator Script"
@@ -269,7 +261,7 @@ function Init()
     buttons.Name = "buttons"
     buttons.Parent = MainFrame
     buttons.BackgroundColor3 = Color3.new(0, 0, 0)
-    buttons.BackgroundTransparency = 1
+    buttons.BackgroundTransparency = 0.5
     buttons.Position = UDim2.new(0, 10, 0, 50)
     buttons.Size = UDim2.new(1, -20, 1, -60)
 
@@ -282,7 +274,7 @@ function Init()
     toolSelectionText.Name = "toolSelectionText"
     toolSelectionText.Parent = toolSelectionFrame
     toolSelectionText.BackgroundColor3 = Color3.new(0, 0, 255)
-	toolSelectionText.BackgroundTransparency = 0.5
+	toolSelectionText.BackgroundTransparency = 0
     toolSelectionText.BorderSizePixel = 0
     toolSelectionText.Position = UDim2.new(0.5, -85, 0.5, -15)
     toolSelectionText.Size = UDim2.new(0, 170, 0, 30)
@@ -294,7 +286,7 @@ function Init()
     toolSelectionRight_B.Name = "toolSelectionRight_B"
     toolSelectionRight_B.Parent = toolSelectionFrame
     toolSelectionRight_B.BackgroundColor3 = Color3.new(0, 0, 255)
-    toolSelectionRight_B.BackgroundTransparency = 0.5
+    toolSelectionRight_B.BackgroundTransparency = 0
     toolSelectionRight_B.Position = UDim2.new(1, -35, 0.5, -15)
     toolSelectionRight_B.Size = UDim2.new(0, 30, 0, 30)
     toolSelectionRight_B.Image = "rbxassetid://1380733312"
@@ -303,7 +295,7 @@ function Init()
     toolSelectionLeft_B.Name = "toolSelectionLeft_B"
     toolSelectionLeft_B.Parent = toolSelectionFrame
     toolSelectionLeft_B.BackgroundColor3 = Color3.new(0, 0, 255)
-    toolSelectionLeft_B.BackgroundTransparency = 0.5
+    toolSelectionLeft_B.BackgroundTransparency = 0
     toolSelectionLeft_B.Position = UDim2.new(0, 5, 0.5, -15)
     toolSelectionLeft_B.Size = UDim2.new(0, 30, 0, 30)
     toolSelectionLeft_B.Image = "rbxassetid://1380733079"
@@ -312,14 +304,14 @@ function Init()
     backpackSelectionFrame.Name = "backpackSelectionFrame"
     backpackSelectionFrame.Parent = buttons
     backpackSelectionFrame.BackgroundColor3 = Color3.new(0, 0, 255)
-    backpackSelectionFrame.BackgroundTransparency = 0.7
+    backpackSelectionFrame.BackgroundTransparency = 0.2
     backpackSelectionFrame.Position = UDim2.new(0, 0, 0, 40)
     backpackSelectionFrame.Size = UDim2.new(1, 0, 0, 40)
 
     backpackSelectionText.Name = "backpackSelectionText"
     backpackSelectionText.Parent = backpackSelectionFrame
     backpackSelectionText.BackgroundColor3 = Color3.new(0, 0, 255)
-	backpackSelectionText.BackgroundTransparency = 0.5
+	backpackSelectionText.BackgroundTransparency = 0
     backpackSelectionText.BorderSizePixel = 0
     backpackSelectionText.Position = UDim2.new(0.5, -85, 0.5, -15)
     backpackSelectionText.Size = UDim2.new(0, 170, 0, 30)
@@ -331,7 +323,7 @@ function Init()
     backpackSelectionRight_B.Name = "backpackSelectionRight_B"
     backpackSelectionRight_B.Parent = backpackSelectionFrame
     backpackSelectionRight_B.BackgroundColor3 = Color3.new(0, 0, 255)
-    backpackSelectionRight_B.BackgroundTransparency = 0.5
+    backpackSelectionRight_B.BackgroundTransparency = 0
     backpackSelectionRight_B.Position = UDim2.new(1, -35, 0.5, -15)
     backpackSelectionRight_B.Size = UDim2.new(0, 30, 0, 30)
     backpackSelectionRight_B.Image = "rbxassetid://1380733312"
@@ -340,7 +332,7 @@ function Init()
     backpackSelectionLeft_B.Name = "backpackSelectionLeft_B"
     backpackSelectionLeft_B.Parent = backpackSelectionFrame
     backpackSelectionLeft_B.BackgroundColor3 = Color3.new(0, 0, 255)
-    backpackSelectionLeft_B.BackgroundTransparency = 0.5
+    backpackSelectionLeft_B.BackgroundTransparency = 0
     backpackSelectionLeft_B.Position = UDim2.new(0, 5, 0.5, -15)
     backpackSelectionLeft_B.Size = UDim2.new(0, 30, 0, 30)
     backpackSelectionLeft_B.Image = "rbxassetid://1380733079"
@@ -349,7 +341,7 @@ function Init()
     buyequiptoolbackpack_B.Name = "buyequiptoolbackpack_B"
     buyequiptoolbackpack_B.Parent = buttons
     buyequiptoolbackpack_B.BackgroundColor3 = Color3.new(0, 0, 255)
-	buyequiptoolbackpack_B.BackgroundTransparency = 0.7
+	buyequiptoolbackpack_B.BackgroundTransparency = 0.2
     buyequiptoolbackpack_B.BorderSizePixel = 0
     buyequiptoolbackpack_B.Position = UDim2.new(0, 0, 0, 85)
     buyequiptoolbackpack_B.Size = UDim2.new(1, 0, 0, 30)

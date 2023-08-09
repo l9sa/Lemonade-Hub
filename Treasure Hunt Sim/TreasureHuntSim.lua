@@ -75,7 +75,6 @@ end)
 CoinsLabel:GetPropertyChangedSignal("Text"):Connect(function()
 
 	AutoRebirth()
-	
 	AutoBuyItems(Shovels, ShovelsFolder, AutoBuyToggles['Shovels'], getCurrentItem)
 	AutoBuyItems(Backpacks, BackpacksFolder, AutoBuyToggles['Backpacks'], getCurrentBackPack)
 	AutoBuyItems(Pets, PetsFolder, AutoBuyToggles['Pets'], getCurrentPet)

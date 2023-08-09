@@ -56,7 +56,7 @@ TextLabel.BackgroundColor3 = Color3.fromRGB(242, 60, 255)
 TextLabel.Position = UDim2.new(0.469327301, 0, 0, 0)
 TextLabel.Size = UDim2.new(0, 100, 0, 28)
 TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "Fly GUI V3"
+TextLabel.Text = "Fly GUI"
 TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.TextScaled = true
 TextLabel.TextSize = 14.000
@@ -136,9 +136,8 @@ local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
 nowe = false
 
 game:GetService("StarterGui"):SetCore("SendNotification", { 
-    Title = "Fly GUI V3";
-    Text = "By xMintix discord: xMintix";
-    Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+    Title = "Fly GUI";
+    Text = "By xMintix discord: xMintix"})
 Duration = 5;
 
 Frame.Active = true -- main = gui
@@ -168,14 +167,9 @@ onof.MouseButton1Down:connect(function()
     else 
         nowe = true
 
-
-
         for i = 1, speeds do
             spawn(function()
-
                 local hb = game:GetService("RunService").Heartbeat    
-
-
                 tpwalking = true
                 local chr = game.Players.LocalPlayer.Character
                 local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")

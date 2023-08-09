@@ -7,9 +7,9 @@ local JobSection = Job:NewSection("Subblox Delivery")
 JobSection:NewButton("Sunblox Delivery", "Finish Sunblox Delivery Job", function()
 
     local humanoid = game.Players.LocalPlayer.Character.HumanoidRootPart
-    _G.SunbloxDelivery = true
+    getgenv().SunbloxDelivery = true
 
-    while _G.SunbloxDelivery == true do
+    while getgenv().SunbloxDelivery == true do
         for i, v in pairs(game.Workspace.LightBeam:GetChildren()) do
             if v.Name == "Pos" then
                 humanoid.CFrame = v.CFrame
@@ -110,19 +110,13 @@ end)
 
 local OtherSection = Other:NewSection("Infinite Jump Script")
 OtherSection:NewButton("InfiniteJump", "Runs Infinite Jump Script!", function()
-    game.StarterGui:SetCore("SendNotification", {
-        Title = "@xMintix On Discord";
-        Text = "Infinite Jump executed Spam the space button.";
-        Duration = 3;
-    })
-
     local Player = game:GetService("Players").LocalPlayer
     local Mouse = Player:GetMouse()
 
-    _G.infinjump = true
+    getgenv().infinjump = true
 
     Mouse.KeyDown:connect(function(k)
-        if _G.infinjump then
+        if getgenv().infinjump then
             if k:byte() == 32 then
                 Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
                 Humanoid:ChangeState("Jumping")
@@ -135,10 +129,10 @@ OtherSection:NewButton("InfiniteJump", "Runs Infinite Jump Script!", function()
     Mouse.KeyDown:connect(function(k)
     k = k:lower()
         if k == "f" then
-            if _G.infinjump == true then
-                _G.infinjump = false
+            if getgenv().infinjump == true then
+                getgenv().infinjump = false
             else
-                _G.infinjump = true
+                getgenv().infinjump = true
             end
         end
     end)
@@ -158,7 +152,6 @@ local Rejoin = coroutine.create(function()
     local Success, ErrorMessage = pcall(function()
         TeleportService:Teleport(game.PlaceId, LocalPlayer)
     end)
- 
     if ErrorMessage and not Success then
         warn(ErrorMessage)
     end

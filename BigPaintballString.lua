@@ -1,5 +1,5 @@
-if _G.active == nil then
-    _G.active = true
+if getgenv().active == nil then
+    getgenv().active = true
 end
 
 local plr = game:GetService("Players").LocalPlayer
@@ -29,7 +29,7 @@ local function get_target_players()
     return target_players
 end 
 
-while RS.RenderStepped:Wait() and _G.active do
+while RS.RenderStepped:Wait() and getgenv().active do
     local targets = get_target_players()
     for i,v in next, targets do
         local cam = workspace.CurrentCamera
@@ -43,6 +43,6 @@ while RS.RenderStepped:Wait() and _G.active do
             humr.CFrame = target_humr.CFrame - target_humr.CFrame.lookVector * 5
             cam.CFrame = CFrame.new(cam.CFrame.p, target_humr.Position)
             RS.RenderStepped:Wait()
-        until not guns_folder:FindFirstChild(v.Name) or not _G.active
+        until not guns_folder:FindFirstChild(v.Name) or not getgenv().active
     end
 end
