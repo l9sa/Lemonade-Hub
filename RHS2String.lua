@@ -5,18 +5,30 @@ local Job = Window:NewTab("Jobs")
 
 local JobSection = Job:NewSection("Subblox Delivery")
 JobSection:NewButton("Sunblox Delivery", "Finish Sunblox Delivery Job", function()
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local humanoid = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
 
-    local humanoid = game.Players.LocalPlayer.Character.HumanoidRootPart
+if humanoid then
     getgenv().SunbloxDelivery = true
 
-    while getgenv().SunbloxDelivery == true do
-        for i, v in pairs(game.Workspace.LightBeam:GetChildren()) do
+    while getgenv().SunbloxDelivery do
+        for _, v in pairs(game.Workspace.LightBeam:GetChildren()) do
             if v.Name == "Pos" then
-                humanoid.CFrame = v.CFrame
+                local success, errorInfo = pcall(function()
+                    humanoid.CFrame = v.CFrame
+                end)
+                if not success then
+                    warn("Error while setting CFrame:", errorInfo)
+                end
                 wait(0.1)
             end
         end
     end
+else
+    warn("HumanoidRootPart not found")
+end
+
 end)
 
 local JobSection = Job:NewSection("Club Red Potioneer")
@@ -74,12 +86,22 @@ end)
 local JobSection = Job:NewSection("Servant Of The Void")
 JobSection:NewButton("Finish Job", "Gets Parkour Checkpoint Orbs To AutoComplete", function()
 print("Begin Servant Of The Void Completion")
-for i = 1 , 150 do
-    game:GetService("ReplicatedStorage").Remotes.Jobs.ChefUmbras.SectionCompleted:FireServer(
-        {
-            [1] = "D8706113-6474-49E8-ACBA-CCF96A04B185"
-        }
-    )
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local SectionCompleted = ReplicatedStorage.Remotes.Jobs.ChefUmbras.SectionCompleted
+
+local jobId = "D8706113-6474-49E8-ACBA-CCF96A04B185"
+local totalIterations = 150
+
+for i = 1, totalIterations do
+    local success, errorInfo = pcall(function()
+        SectionCompleted:FireServer({
+            [1] = jobId
+        })
+        print("Completed iteration", i)
+    end)
+    if not success then
+        warn("Error in iteration", i, ":", errorInfo)
+    end
 end
 print("End Servant Of The Void Completion")
 end)
@@ -110,32 +132,27 @@ end)
 
 local OtherSection = Other:NewSection("Infinite Jump Script")
 OtherSection:NewButton("InfiniteJump", "Runs Infinite Jump Script!", function()
-    local Player = game:GetService("Players").LocalPlayer
-    local Mouse = Player:GetMouse()
+local Players = game:GetService("Players")
+local UserInputService = game:GetService("UserInputService")
 
+local LocalPlayer = Players.LocalPlayer
+local Humanoid = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+local Mouse = LocalPlayer:GetMouse()
+
+if Humanoid then
     getgenv().infinjump = true
 
-    Mouse.KeyDown:connect(function(k)
-        if getgenv().infinjump then
-            if k:byte() == 32 then
-                Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
-                Humanoid:ChangeState("Jumping")
-                wait(0.075)
-                Humanoid:ChangeState("Seated")
-            end
+    local function onKeyPress(input)
+        if getgenv().infinjump and input.KeyCode == Enum.KeyCode.Space then
+            Humanoid:ChangeState("Jumping")
+            wait(0.075)
+            Humanoid:ChangeState("Seated")
         end
-    end)
-
-    Mouse.KeyDown:connect(function(k)
-    k = k:lower()
-        if k == "f" then
-            if getgenv().infinjump == true then
-                getgenv().infinjump = false
-            else
-                getgenv().infinjump = true
-            end
-        end
-    end)
+    end
+    UserInputService.InputBegan:Connect(onKeyPress)
+else
+    warn("Humanoid not found")
+end
 end)
 
 local OtherSection = Other:NewSection("Fly Script")
