@@ -1,3 +1,27 @@
+local Players = game:GetService("Players")
+local ReplicatedFirst = game:GetService("ReplicatedFirst")
+local player = Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+local screenGui = Instance.new("ScreenGui")
+local textLabel = Instance.new("TextLabel")
+
+screenGui.IgnoreGuiInset = true
+screenGui.Parent = playerGui
+
+textLabel.Size = UDim2.new(1, 0, 1, 0)
+textLabel.BackgroundColor3 = Color3.fromRGB(0, 20, 40)
+textLabel.Font = Enum.Font.GothamMedium
+textLabel.TextColor3 = Color3.new(0.8, 0.8, 0.8)
+textLabel.Text = "Waiting For Game\n To Load"
+textLabel.TextSize = 28
+textLabel.Parent = screenGui
+
+ReplicatedFirst:RemoveDefaultLoadingScreen()
+repeat
+  wait()
+until game:IsLoaded()
+screenGui:Destroy()
+
 local Gui = Drawing.new("Text")
 Gui.Visible=true
 Gui.Text="Brought to you by @xMintix on discord"
