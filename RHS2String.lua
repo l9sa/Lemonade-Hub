@@ -156,27 +156,27 @@ end)
 
 local OtherSection = Other:NewSection("Infinite Jump Script")
 OtherSection:NewButton("InfiniteJump", "Runs Infinite Jump Script!", function()
-local Players = game:GetService("Players")
-local UserInputService = game:GetService("UserInputService")
+    local Players = game:GetService("Players")
+    local UserInputService = game:GetService("UserInputService")
 
-local LocalPlayer = Players.LocalPlayer
-local Humanoid = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
-local Mouse = LocalPlayer:GetMouse()
+    local LocalPlayer = Players.LocalPlayer
+    local Humanoid = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+    local Mouse = LocalPlayer:GetMouse()
 
-if Humanoid then
-    getgenv().infinjump = true
+    if Humanoid then
+        getgenv().infinjump = true
 
-    local function onKeyPress(input)
-        if getgenv().infinjump and input.KeyCode == Enum.KeyCode.Space then
-            Humanoid:ChangeState("Jumping")
-            wait(0.075)
-            Humanoid:ChangeState("Seated")
+        local function onKeyPress(input)
+            if getgenv().infinjump and input.KeyCode == Enum.KeyCode.Space then
+                Humanoid:ChangeState("Jumping")
+                wait(0.075)
+                Humanoid:ChangeState("Seated")
+            end
         end
+        UserInputService.InputBegan:Connect(onKeyPress)
+    else
+        warn("Humanoid not found")
     end
-    UserInputService.InputBegan:Connect(onKeyPress)
-else
-    warn("Humanoid not found")
-end
 end)
 
 local OtherSection = Other:NewSection("Fly Script")

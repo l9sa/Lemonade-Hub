@@ -34,11 +34,16 @@ game:GetService("RunService").RenderStepped:Connect(function()a.Position=Vector2
 wait(3)
 Gui:Remove()
 
+local RHS2GameId = 2098516465
+local TreasureHuntSimGameId = 1345139196
+local BigPaintBallGameId = 3527629287
 
-if game.PlaceId == 2098516465 then
+if game.PlaceId == RHS2GameId then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/xMintix/Lemonade-Hub/main/RHS2String.lua"))()
-elseif game.PlaceId == 1345139196 then
+elseif game.PlaceId == TreasureHuntSimGameId then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/xMintix/Lemonade-Hub/main/Treasure%20Hunt%20Sim/TreasureHuntString.lua"))()
+elseif game.PlaceId == BigPaintBallGameId then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/xMintix/Lemonade-Hub/main/BigPaintballString.lua"))
 else
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/xMintix/Lemonade-Hub/main/Universal"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/xMintix/Lemonade-Hub/main/Universal.lua"))()
 end
