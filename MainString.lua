@@ -4,7 +4,6 @@ local RunService = game:GetService("RunService")
 local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 
--- Create loading screen
 local screenGui = Instance.new("ScreenGui")
 local textLabel = Instance.new("TextLabel")
 screenGui.IgnoreGuiInset = true
@@ -18,21 +17,16 @@ textLabel.Text = "Waiting For Game\n To Load"
 textLabel.TextSize = 28
 textLabel.Parent = screenGui
 
--- Remove default loading screen
 ReplicatedFirst:RemoveDefaultLoadingScreen()
-
--- Wait for game to load
 repeat
     wait()
 until game:IsLoaded()
 
--- Destroy loading screen
 screenGui:Destroy()
 
--- Show key information
 local GetKey = Drawing.new("Text")
 GetKey.Visible = true
-GetKey.Text = "Key Is In Discord Server .gg/aGG9rYNMJA"
+GetKey.Text = "Key Is In Discord Server .gg/kwZtTj7eUy"
 GetKey.Transparency = 2
 GetKey.Font = 14
 GetKey.Size = 33
@@ -43,38 +37,45 @@ end)
 wait(1)
 GetKey:Destroy()
 
--- Create key unlock GUI
+if playerGui:FindFirstChild("KeyGUI") then
+    playerGui:FindFirstChild("KeyGUI"):Destroy()
+end
+
 getgenv().KeyUnlocked = false
 local Gui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local PasswordHolder = Instance.new("TextBox")
 local LoginButton = Instance.new("TextButton")
+local DiscordButton = Instance.new("TextButton")
 
 Gui.Name = "KeyGUI"
 Gui.Parent = playerGui
 
+
 Frame.Name = "MainFrame"
 Frame.Parent = Gui
-Frame.Size = UDim2.new(0, 200, 0, 150)
-Frame.Position = UDim2.new(0.5, -100, 0.5, -75)
+Frame.Size = UDim2.new(0, 300, 0, 270)
+Frame.Position = UDim2.new(0.5, -150, 0.5, -135)
 Frame.BackgroundTransparency = 0.5
 Frame.BackgroundColor3 = Color3.new(0, 0, 0)
+Frame.Active = true
+Frame.Draggable = true
 
 PasswordHolder.Name = "PasswordHolder"
 PasswordHolder.Parent = Frame
 PasswordHolder.Size = UDim2.new(1, -20, 0, 25)
-PasswordHolder.Position = UDim2.new(0, 10, 0, 90)
+PasswordHolder.Position = UDim2.new(0, 10, 0, 180)
 PasswordHolder.PlaceholderText = "Password"
 PasswordHolder.Text = ""
 PasswordHolder.TextWrapped = false
 
 LoginButton.Name = "LoginButton"
 LoginButton.Parent = Frame
-LoginButton.Size = UDim2.new(1, 0, 0, 30)
-LoginButton.Position = UDim2.new(0, 0, 0, 120)
+LoginButton.Size = UDim2.new(1, 0, 0, 45)
+LoginButton.Position = UDim2.new(0, 0, 0, 230)
 LoginButton.BackgroundColor3 = Color3.new(0, 0.5, 0.5)
 LoginButton.Text = "Login"
-LoginButton.FontSize = Enum.FontSize.Size14
+LoginButton.FontSize = Enum.FontSize.Size18
 LoginButton.MouseButton1Click:Connect(function()
     local password = PasswordHolder.Text
     if password == "lCYehIdOnTEdatPZnumbers" then
@@ -96,6 +97,21 @@ LoginButton.MouseButton1Click:Connect(function()
     end
 end)
 
+DiscordButton.Name = "DiscordButton"
+DiscordButton.Parent = Frame
+DiscordButton.Size = UDim2.new(1, 0, 0, 30)
+DiscordButton.Position = UDim2.new(0, 0, 0, 280)
+DiscordButton.BackgroundColor3 = Color3.new(0.5, 0.5, 0.5)
+DiscordButton.Text = "Join Discord: discord.gg/kwZtTj7eUy"
+DiscordButton.FontSize = Enum.FontSize.Size16
+DiscordButton.MouseButton1Click:Connect(function()
+    setclipboard("discord.gg/kwZtTj7eUy")
+    game:GetService("StarterGui"):SetCore("SendNotification", { 
+        Title = "Discord Invite";
+        Text = "Discord Invite Copied to clipboard press win+v to find it!"})
+    Duration = 10;
+end)
+
 
 while not getgenv().KeyUnlocked do
     wait()
@@ -103,7 +119,7 @@ end
 
 local Gui = Drawing.new("Text")
 Gui.Visible = true
-Gui.Text = "https://discord.gg/aGG9rYNMJA"
+Gui.Text = "discord.gg/kwZtTj7eUy"
 Gui.Transparency = 2
 Gui.Font = 14
 Gui.Size = 33
@@ -113,6 +129,10 @@ RunService.RenderStepped:Connect(function()
 end)
 wait(2)
 Gui:Remove()
+
+local RHS2GameId = 2098516465
+local TreasureHuntSimGameId = 1345139196
+local BigPaintBallGameId = 3527629287
 
 if game.PlaceId == RHS2GameId then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/xMintix/Lemonade-Hub/main/RHS2String.lua"))()
