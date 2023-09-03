@@ -120,7 +120,7 @@ FlySection:NewButton("Fly", "Executes The Fly Script!", function()
 end)
 
 local RejoinSection = Other:NewSection("Rejoin Game Script")
-RejoinSection:NewButton("Rejoin", "Rejoins The Game Using The Same Server", function()
+RejoinSection:NewButton("Rejoin (WONT WORK SINCE THESE EXECUTERS ARE SHIT)", "Rejoins The Game Using The Same Server", function()
 local TeleportService = game:GetService("TeleportService")
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
