@@ -3,6 +3,7 @@ local Window = Library.CreateLib("Lemonade Hub -- BigPaintball", "Ocean")
 local Main = Window:NewTab("Main")
 local MainSection = Main:NewSection("Main")
 
+getgenv().active = nill
 
 MainSection:NewButton("Auto Farm Kill All", "Kills All Players", function()
     if getgenv().active == nil then
