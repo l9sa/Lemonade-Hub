@@ -48,7 +48,7 @@ MainSection:NewButton("Auto Farm Kill All", "Kills All Players", function()
                     break
                 end
                 local target_humr = target_char:WaitForChild("HumanoidRootPart")
-                humr.CFrame = target_humr.CFrame - target_humr.CFrame.lookVector * 5
+                humr.CFrame = target_humr.CFrame - target_humr.CFrame.lookVector * 10
                 cam.CFrame = CFrame.new(cam.CFrame.p, target_humr.Position)
                 RS.RenderStepped:Wait()
             until not guns_folder:FindFirstChild(v.Name) or not getgenv().active
