@@ -114,13 +114,13 @@ OtherSection:NewButton("InfiniteJump", "Runs Infinite Jump Script!", function()
     end
 end)
 
-local OtherSection = Other:NewSection("Fly Script")
-OtherSection:NewButton("Fly", "Executes The Fly Script!", function()
+local FlySection = Other:NewSection("Fly Script")
+FlySection:NewButton("Fly", "Executes The Fly Script!", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/xMintix/Lemonade-Hub/main/Flight.lua"))()
 end)
 
-local OtherSection = Other:NewSection("Rejoin Game Script")
-OtherSection:NewButton("Rejoin", "Rejoins The Game Using The Same Server", function()
+local RejoinSection = Other:NewSection("Rejoin Game Script")
+RejoinSection:NewButton("Rejoin", "Rejoins The Game Using The Same Server", function()
 local TeleportService = game:GetService("TeleportService")
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
